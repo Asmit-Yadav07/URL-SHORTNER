@@ -24,15 +24,21 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    role: {
+        type: String,
+        enum: ["user", "admin"],
+        default: "user"
+
+    }
 }, { timestamps: true })
 
-userSchema.pre("save", async (next) => {
-    if (!this.isModified("password")) { return (next()) }
-    this.password = await bycrpt.hash(this.password, 10)
+userSchema.pre("save", async function (next) {
+    if (!this.isModified("password")) return next()
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 })
-userSchema.methods.isPasswordCorrect = async (password) => {
-    return await bycrpt.compare(this.password, password)
+userSchema.methods.isPasswordCorrect = async function (password) {
+    return await bcrypt.compare(this.password, password)
 }
 
 
@@ -41,8 +47,8 @@ userSchema.methods.generateAccessToken = function () {
         {
             _id: this._id,
             email: this.email,
-            username: this.username,
-            fullName: this.fullName
+            username: this.userName,
+            name: this.name
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
