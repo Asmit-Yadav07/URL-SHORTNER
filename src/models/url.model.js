@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
 
 const urlSchema = new mongoose.Schema({
+    createdBy: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User",
+        required: true
+    },
     originalUrl: {
         type: String,
         required: true
     },
     shortCodelUrl: {
         type: String,
-        required: true
-    },
-    createdAt: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
         required: true
     },
     expiresAt: {
