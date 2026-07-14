@@ -210,30 +210,40 @@ Collections include:
 
 ---
 
-# 🚧 Current Development Roadmap
+# 🚧 Current Development Status
 
-The project is actively evolving with features currently being designed and implemented:
+The core backend infrastructure of LinkSwift is currently complete and includes:
 
-- Redis Caching for Ultra-Fast Redirect Responses
-- BullMQ Event Queues for Asynchronous Click Processing
-- Background Analytics Workers
-- Distributed Telemetry Processing
-- Rate Limiting per API Key
-- Improved Performance under High Traffic Loads
+- Secure JWT Authentication
+- Refresh Token Rotation
+- Developer API Key Generation
+- URL Creation and Redirection
+- Ownership-Based Access Control
+- Analytics Tracking
+- MongoDB Aggregation Reports
+- User Profile Management
+- Password Recovery using OTP Verification
+- Modular MVC Architecture
+- Custom Error Handling
+- Reusable Middleware Components
+
+The project is now entering its optimization and scaling phase, where future iterations will focus on caching strategies, asynchronous processing, advanced analytics, and high-traffic performance improvements.
 
 ---
 
-# 📈 Upcoming Features
+# 📈 Future Improvements
 
-- Geolocation Based Click Analytics
-- Browser Analytics
-- Device Analytics
-- Operating System Analytics
+- Redis Caching for Faster Redirect Responses
+- BullMQ Event Queues for Asynchronous Click Processing
+- Background Analytics Workers
+- Distributed Telemetry Processing
+- Geolocation/IP Click Analytics
+- Browser and Device Analytics
 - QR Code Generation for Short Links
 - Custom Alias Support
-- Expiring Links
-- Timed Links
-- Admin Dashboard
+- Expiring and Timed Links
+- Rate Limiting per API Key
+- Admin Dashboard UI
 - Public Analytics Dashboard
 
 ---
